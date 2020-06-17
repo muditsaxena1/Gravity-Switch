@@ -5,7 +5,7 @@ using UnityEngine;
 public class GravitySwitcher : MonoBehaviour
 {
     AreaEffector2D areaEffector;
-    bool buttonPressed = false;
+     public bool buttonPressed = false;
     public float startingAngle;
 
     // Start is called before the first frame update
@@ -21,8 +21,10 @@ public class GravitySwitcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             buttonPressed = true;
-        }
+        }       
     }
+
+    
 
     private void FixedUpdate()
     {
