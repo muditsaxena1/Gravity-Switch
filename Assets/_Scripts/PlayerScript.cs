@@ -6,10 +6,70 @@ public class PlayerScript : MonoBehaviour
 {
     GameManager gameManager;
     public GameObject particlesystem;
+    TrailRenderer tr;
+    Camera cam;
+    Rigidbody rb;
+    float buffer = 1f;
+    int waitFrames;
+
+    float leftBound, rightBound, topBound, bottomBound;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        tr = GetComponent<TrailRenderer>();
+        cam = Camera.main;
         gameManager = GameManager.instance;
+        Vector3 temp = cam.ScreenToWorldPoint(new Vector3(-buffer, -buffer, 0f));
+        leftBound = temp.x;
+        bottomBound = temp.y;
+        temp = cam.ScreenToWorldPoint(new Vector3(Screen.width + buffer, Screen.height + buffer, 0f));
+        rightBound = temp.x;
+        topBound = temp.y;
+    }
+
+    private void FixedUpdate()
+    {
+        if(waitFrames > 0)
+        {
+            waitFrames--;
+            if (waitFrames == 0)
+            {
+                tr.time = 0.5f;
+            }
+        }
+        if (transform.position.x > rightBound)
+        {
+            tr.time = 0f;
+            Vector3 pos = transform.position;
+            pos.x = leftBound;
+            transform.position = pos;
+            waitFrames = 2;
+        }
+        if (transform.position.x < leftBound)
+        {
+            tr.time = 0f;
+            Vector3 pos = transform.position;
+            pos.x = rightBound;
+            transform.position = pos;
+            waitFrames = 2;
+        }
+        if (transform.position.y < bottomBound)
+        {
+            tr.time = 0f;
+            Vector3 pos = transform.position;
+            pos.y = topBound;
+            transform.position = pos;
+            waitFrames = 2;
+        }
+        if (transform.position.y > topBound)
+        {
+            tr.time = 0f;
+            Vector3 pos = transform.position;
+            pos.y = bottomBound;
+            transform.position = pos;
+            waitFrames = 2;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
