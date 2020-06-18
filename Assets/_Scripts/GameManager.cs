@@ -2,34 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravitySwitcher : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     AreaEffector2D areaEffector;
-    bool buttonPressed = false;
     public float startingAngle;
+    public bool gameOn = false;
+    public static GameManager instance;
+    InputManager inputManager;
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
         areaEffector = GetComponent<AreaEffector2D>();
         areaEffector.forceAngle = startingAngle;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            buttonPressed = true;
-        }
+        inputManager = InputManager.instance;
     }
 
     private void FixedUpdate()
     {
-        if (buttonPressed)
+        if (inputManager.IsButtonDown())
         {
-            buttonPressed = false;
             areaEffector.forceAngle = (areaEffector.forceAngle + 270) % 360;
         }
     }
+
 }
