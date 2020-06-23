@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8774627321589095073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.93, y: 5.37, z: 0}
-  m_LocalScale: {x: 0.356567, y: 0.356567, z: 0.356567}
+  m_LocalScale: {x: 0.70768106, y: 0.70768106, z: 0.70768106}
   m_Children:
   - {fileID: 8774627321786456203}
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
-  m_Color: {r: 1, g: 0.9490196, b: 0.30980393, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 43f2ef8eafed22142aaad3de06ec33e3, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.8352941, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,18 +99,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0077881813, y: -0.013158441}
+  m_Offset: {x: 0.00038337708, y: -0.0015087724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0119476, y: 5.0337944}
+  m_Size: {x: 2.5436964, y: 2.549903}
   m_EdgeRadius: 0
 --- !u!50 &8774627321589095077
 Rigidbody2D:
@@ -203,7 +203,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.9490196, b: 0.30980393, a: 0.58431375}
+      key0: {r: 0, g: 1, b: 0.8352941, a: 0.58431375}
       key1: {r: 1, g: 0.9490196, b: 0.30980393, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -357,7 +357,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -474,7 +474,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.9471402, b: 0.3066038, a: 1}
+      maxColor: {r: 0, g: 1, b: 0.8352941, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
