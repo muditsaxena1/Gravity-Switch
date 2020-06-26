@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 40, y: 20}
+  m_Size: {x: 50, y: 50}
   m_EdgeRadius: 0
 --- !u!249 &2512906935023784107
 AreaEffector2D:
@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingAngle: 270
   gameOn: 1
+  movesLeftText: {fileID: 0}
+  movesLeft: 2
 --- !u!114 &2512906935023784104
 MonoBehaviour:
   m_ObjectHideFlags: 0
