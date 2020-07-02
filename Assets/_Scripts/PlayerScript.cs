@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,6 +16,10 @@ public class PlayerScript : MonoBehaviour
 
     float leftBound, rightBound, topBound, bottomBound;
 
+    //new stuff
+    //public int nextSceneLoad;
+    //public  bool isCompleted = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,6 +32,9 @@ public class PlayerScript : MonoBehaviour
         temp = cam.ScreenToWorldPoint(new Vector3(Screen.width + buffer, Screen.height + buffer, 0f));
         rightBound = temp.x;
         topBound = temp.y;
+
+        //new stuff
+        //nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     private void FixedUpdate()
@@ -78,6 +87,10 @@ public class PlayerScript : MonoBehaviour
             collision.gameObject.SetActive(false);
             gameManager.gameOn = false;
             particlesystem.SetActive(true);
+            //new stuff
+            //isCompleted = true;
+            
+
             Debug.Log("Level Completed");
         }
     }
