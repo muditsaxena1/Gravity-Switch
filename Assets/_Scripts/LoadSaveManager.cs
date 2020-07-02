@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LoadSaveManager : MonoBehaviour
 {
+    public static LoadSaveManager instance;
+
     private int illuminatiCount;
     private int diamondCount;
     private int[] levelStars;
@@ -75,7 +77,15 @@ public class LoadSaveManager : MonoBehaviour
     }
     public void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void Start()
     {
