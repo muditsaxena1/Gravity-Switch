@@ -11,6 +11,7 @@ public class LoadSaveManager : MonoBehaviour
     private int[] levelStars;
     private bool[] skinsUnlocked;
     private int currentSkin;
+    private int levelsUnlocked;
 
     public int IlluminatiCount
     {
@@ -37,6 +38,19 @@ public class LoadSaveManager : MonoBehaviour
             SaveSystem.SaveData(this);
         }
     }
+
+    //get 1 val
+    public int GetLevelStars(int index)
+    {
+        return levelStars[index];
+    }
+    //set 1 val
+    public void SetLevelStars(int index, int stars)
+    {
+        levelStars[index] = stars;
+        SaveSystem.SaveData(this);
+    }
+
     public int[] LevelStars
     {
         get
@@ -62,6 +76,19 @@ public class LoadSaveManager : MonoBehaviour
             SaveSystem.SaveData(this);
         }
     }
+    
+    //get 1 val
+    public bool GetSkinsUnlocked(int index)
+    {
+        return skinsUnlocked[index];
+    }
+
+    //set 1 val
+    public void SetSkinsUnlocked(int index, bool val)
+    {
+        skinsUnlocked[index] = val;
+        SaveSystem.SaveData(this);
+    }
 
     public int CurrentSkin
     {
@@ -75,6 +102,20 @@ public class LoadSaveManager : MonoBehaviour
             SaveSystem.SaveData(this);
         }
     }
+
+    public int LevelsUnlocked
+    {
+        get
+        {
+            return levelsUnlocked;
+        }
+        set
+        {
+            levelsUnlocked = value;
+            SaveSystem.SaveData(this);
+        }
+    }
+
     public void Awake()
     {
         if(instance == null)
@@ -95,8 +136,14 @@ public class LoadSaveManager : MonoBehaviour
             illuminatiCount = 0;
             diamondCount = 0;
             levelStars = new int[50];
+            for(int i = 0; i < 50; i++)
+            {
+                levelStars[i] = -1;     // not cleared
+            }
             skinsUnlocked = new bool[50];
             currentSkin = 0;
+            LevelsUnlocked = 1;
+            SaveSystem.SaveData(this);
         }
         else
         {
