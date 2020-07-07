@@ -13,9 +13,10 @@ public class PlayerScript : MonoBehaviour
     Rigidbody rb;
     float buffer = 1f;
     int waitFrames;
+    int starCollected = 0;
 
     float leftBound, rightBound, topBound, bottomBound;
-
+    PauseController pauseController;
     //new stuff
     //public int nextSceneLoad;
     //public  bool isCompleted = false;
@@ -32,7 +33,7 @@ public class PlayerScript : MonoBehaviour
         temp = cam.ScreenToWorldPoint(new Vector3(Screen.width + buffer, Screen.height + buffer, 0f));
         rightBound = temp.x;
         topBound = temp.y;
-
+        pauseController = PauseController.instance;
         //new stuff
         //nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
@@ -89,9 +90,14 @@ public class PlayerScript : MonoBehaviour
             particlesystem.SetActive(true);
             //new stuff
             //isCompleted = true;
-            
-
             Debug.Log("Level Completed");
+            pauseController.OnLevelClear(starCollected);
+        }
+        else if(collision.tag == "Star")
+        {
+            collision.gameObject.SetActive(false);
+            starCollected++;
+            Debug.Log("Star collected");
         }
     }
 }
