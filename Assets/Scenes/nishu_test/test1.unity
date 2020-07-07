@@ -402,6 +402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
         type: 3}
+      propertyPath: myColorsSecondArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
       propertyPath: img
       value: 
       objectReference: {fileID: 771664826}
@@ -464,6 +469,46 @@ PrefabInstance:
         type: 3}
       propertyPath: myColorsFirstArray.Array.data[1].b
       value: 0.04385972
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[2].r
+      value: 0.6571356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[2].g
+      value: 0.38416696
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[2].b
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[2].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[3].r
+      value: 0.6571356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[3].g
+      value: 0.38416696
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[3].b
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535783802999777653, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
+        type: 3}
+      propertyPath: myColorsSecondArray.Array.data[3].a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1535783802999777654, guid: bfeebc5f4e734d649a5eae16ee0d9c35,
         type: 3}
