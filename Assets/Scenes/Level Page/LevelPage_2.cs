@@ -16,7 +16,7 @@ public class LevelPage_2 : MonoBehaviour
         
     }
     public LevelItem[] levelList;**/
-
+    
     public Button[] lvlButtons;
 
     void Start()

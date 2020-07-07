@@ -23,69 +23,69 @@ public class LevelPage : MonoBehaviour
 
     #endregion
 
-    [System.Serializable]
-    public class ShopItem
-    {
-        //public string SceneName;
-        public bool isUnlocked=false;
-    }
-    public List<ShopItem> ShopItemsList;
+    //[System.Serializable]
+    //public class LevelItem
+    //{
+    //    //public string SceneName;
+    //    public bool isUnlocked=false;
+    //}
+    LoadSaveManager loadSaveManager;
+    const int LEVELCOUNT = 50;
 
-    public ShopItem[] ShopItemList;
+    public Sprite brightStar;
 
     [SerializeField] GameObject ItemTemplate;
-    GameObject eachItem;
     [SerializeField] Transform ShopScrollView;
     [SerializeField] GameObject ShopPanel;
+
+    GameObject eachItem;
     Button levelBtn;
     Text levelNumber;
-
-    public Color levelColor1;
-    public Color levelColor2;
-     Image lockImage;
+    Image lockImage;
+    Image starImage;
 
 
     void Start()
-    { 
-        int len = ShopItemsList.Count;
-        for (int i = 0; i < len; i++)
+    {
+        loadSaveManager = LoadSaveManager.instance;
+        int levelsUnlocked = loadSaveManager.LevelsUnlocked;
+        Debug.Log("levelsUnlocked = " + levelsUnlocked);
+        for (int i = 0; i < LEVELCOUNT; i++)
         {
             eachItem = Instantiate(ItemTemplate, ShopScrollView);
-          
-            levelBtn = eachItem.transform.GetChild(0).GetComponent<Button>();
-            lockImage = eachItem.transform.GetChild(0).GetChild(1).GetComponent<Image>();
-            levelNumber = levelBtn.GetComponentInChildren<Text>();
-            levelNumber.text = (i + 1).ToString();
-            /**if (ShopItemsList[i].isUnlocked)
-            {
-                lockImage.enabled = false;
-                
-                levelNumber.enabled = true;
-               // levelNumber.text = (i + 1).ToString();
-
-            }
-            else
-            {
-                lockImage.enabled = true;
-
-                levelNumber.enabled = false;
-
-            }**/
-            /**levelNumber = buyBtn.GetComponentInChildren<Text>();
-            levelNumber.text = (i+1).ToString();**/
             
-            levelColors(i);
+            if(i < levelsUnlocked)
+            {
+                //unlock level
 
+                //button
+                levelBtn = eachItem.transform.GetChild(0).GetComponent<Button>();
+                levelBtn.interactable = true;
+                levelBtn.AddEventListener(i, OnShopItemBtnClicked);
 
+                //Lock Image
+                lockImage = eachItem.transform.GetChild(0).GetChild(0).GetComponent<Image>();
+                lockImage.enabled = false;
 
+                //Text
+                levelNumber = eachItem.transform.GetChild(0).GetChild(1).GetComponent<Text>();
+                levelNumber.text = (i+1).ToString();
+                levelNumber.enabled = true;
 
-            //levelBtn.AddEventListener(i, OnShopItemBtnClicked);
+                //Stars
+                int starCount = loadSaveManager.GetLevelStars(i);      //[0-3]
+                for(int j = 0; j < 3; j++)
+                {
+                    starImage = eachItem.transform.GetChild(0).GetChild(2).GetChild(j).GetComponent<Image>();
+                    if(j + 1 <= starCount)
+                    {
+                        starImage.sprite = brightStar;
+                    }
+                    starImage.color = Color.white;
+                }
+            }
             
         }
-
-
-
-
     }
 
     void OnShopItemBtnClicked(int itemIndex)
@@ -93,36 +93,5 @@ public class LevelPage : MonoBehaviour
         SceneManager.LoadScene((itemIndex + 1).ToString());
     }
 
-   void levelColors(int i)
-    {
-        if (i > 9 && i < 20)
-        {
-            levelBtn.GetComponent<Image>().color = levelColor1;
-        }
-        else if (i > 19)
-        {
-            levelBtn.GetComponent<Image>().color = levelColor2;
-        }
-    }
-
-    private void Update()
-    {
-        //levelBtn.AddEventListener(i, OnShopItemBtnClicked);
-        for (int i = 0; i < ShopItemsList.Count; i++)
-        {
-            //levelBtn.AddEventListener(i, OnShopItemBtnClicked);
-            if (ShopItemsList[i].isUnlocked)
-            {
-                lockImage.enabled = false;
-                levelNumber.enabled = true;
-            }
-            else
-            {
-                lockImage.enabled = true;
-                levelNumber.enabled = false;
-
-            }
-        }
-    }
 
 }

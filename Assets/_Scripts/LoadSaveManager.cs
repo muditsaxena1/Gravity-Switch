@@ -133,6 +133,7 @@ public class LoadSaveManager : MonoBehaviour
         DataFormat currData = SaveSystem.LoadData();
         if(currData == null)
         {
+            Debug.Log("Creating new data file");
             illuminatiCount = 0;
             diamondCount = 0;
             levelStars = new int[50];
@@ -142,7 +143,8 @@ public class LoadSaveManager : MonoBehaviour
             }
             skinsUnlocked = new bool[50];
             currentSkin = 0;
-            LevelsUnlocked = 1;
+            levelsUnlocked = 1;
+
             SaveSystem.SaveData(this);
         }
         else
@@ -152,6 +154,7 @@ public class LoadSaveManager : MonoBehaviour
             levelStars = currData.levelStars;
             skinsUnlocked = currData.skinsUnlocked;
             currentSkin = currData.currentSkin;
+            levelsUnlocked = currData.levelsUnlocked;
         }
     }
 }
