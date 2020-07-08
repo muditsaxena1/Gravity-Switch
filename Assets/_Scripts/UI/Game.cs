@@ -23,26 +23,40 @@ public class Game : MonoBehaviour
     #endregion
 
     [SerializeField] Text[] allCoinsUIText;
-    public int coins;
+    int[] coinCount;
+    LoadSaveManager loadSaveManager;
+
     void Start()
     {
+        coinCount = new int[2];
+        loadSaveManager = LoadSaveManager.instance;
+        coinCount[0] = loadSaveManager.IlluminatiCount;
+        coinCount[1] = loadSaveManager.StarCount;
         UpdateAllCoinsUIText();
     }
-    public void UseCoins(int amount)
+    public void UseCoins(int amount, bool costsIlluminati)
     {
-        coins -=amount;
+        coinCount[costsIlluminati?0:1] -= amount;
+        if (costsIlluminati)
+        {
+            loadSaveManager.IlluminatiCount = coinCount[0];
+        }
+        else
+        {
+            loadSaveManager.StarCount = coinCount[1];
+        }
     }
 
-    public bool HasEnoughCoins(int amount)
+    public bool HasEnoughCoins(int amount, bool costsIlluminati)
     {
-        return(coins>=amount);
+        return(coinCount[costsIlluminati ? 0 : 1] >= amount);
     }
 
     public void UpdateAllCoinsUIText()
     {
         for (int i=0;i<allCoinsUIText.Length;i++)
         {
-            allCoinsUIText[i].text = coins.ToString();
+            allCoinsUIText[i].text = coinCount[i].ToString();
         }
     }
 

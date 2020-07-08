@@ -21,25 +21,23 @@ public class Shop : MonoBehaviour
     }
 
     #endregion
+    public SkinsManager skinsManager;
+    List<ShopItem> ShopItemsList;
+    [SerializeField] Text NoCoinsText;
 
-    [System.Serializable] public class ShopItem
-    {
-        public Sprite image;
-        public int price;
-        public bool isPurchased=false;
-        public bool isActive = false;
-    }
-    public List<ShopItem> ShopItemsList;
-    [SerializeField] Animator NoCoinsAnim;
-
-
+    public Sprite starSprite;
+    public Sprite shopItemSelectedSprite, shopItemSprite;
     [SerializeField] GameObject ItemTemplate;
-    GameObject eachItem;
     [SerializeField] Transform ShopScrollView;
     [SerializeField] GameObject ShopPanel;
+
+    LoadSaveManager loadSaveManager;
+    Game game;
+
+    GameObject eachItem;
     Button buyBtn;
-    
     Button activeButton;
+    Image skinImage;
     //Image activeButtonImage;
     
     //ColorBlock activeButtonColor;
@@ -57,29 +55,55 @@ public class Shop : MonoBehaviour
     
     void Start()
     {
-       
+        loadSaveManager = LoadSaveManager.instance;
+        game = Game.instance;
 
+        int activeSkinIndex = loadSaveManager.CurrentSkin;
+        bool[] purchasedSkins = loadSaveManager.SkinsUnlocked;
+
+        ShopItemsList = skinsManager.GetShopItemsList();
 
         int len = ShopItemsList.Count;
-        for (int i=0;i<len;i++)
+        for (int i = 0; i < len; i++)
         {
             eachItem = Instantiate(ItemTemplate,ShopScrollView);
-            eachItem.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].image;
-            eachItem.transform.GetChild(1).GetComponent<Text>().text = ShopItemsList[i].price.ToString();
+
+            //Buttons
             buyBtn = eachItem.transform.GetChild(2).GetComponent<Button>();
             activeButton = eachItem.transform.GetChild(4).GetComponent<Button>();
-            //activeButtonImage = eachItem.transform.GetChild(4).GetComponent<Image>();
-            
-            
-            //activeButtonColor = eachItem.transform.GetChild(4).GetComponent<Button>().colors;
+
+            //Image
+            skinImage = eachItem.transform.GetChild(0).GetComponent<Image>();
+            skinImage.sprite = ShopItemsList[i].image;
+
+            //color
+            skinImage.color = ShopItemsList[i].color;
+
+            //costsIlluminati
+            if (!ShopItemsList[i].costsIlluminati)
+            {
+                eachItem.transform.GetChild(3).GetComponent<Image>().sprite = starSprite;
+            }
+
+            //price
+            eachItem.transform.GetChild(1).GetComponent<Text>().text = ShopItemsList[i].price.ToString();
+
+            //isPurchased
+            ShopItemsList[i].isPurchased = purchasedSkins[i];
             if (ShopItemsList[i].isPurchased)
             {
                 DisableBuyButton();
-                //EnableActiveButton();
             }
             
             buyBtn.AddEventListener(i, OnShopItemBtnClicked);
             activeButton.AddEventListener(i, makeActive);
+
+            if(i == activeSkinIndex)
+            {
+                ShopScrollView.GetChild(i).GetChild(4).GetComponent<Button>().interactable = false;
+                ShopScrollView.GetChild(i).GetChild(4).GetChild(0).GetComponent<Text>().text = "SELECTED";
+                ShopScrollView.GetChild(i).GetComponent<Image>().sprite = shopItemSelectedSprite;
+            }
         }
 
         
@@ -89,29 +113,27 @@ public class Shop : MonoBehaviour
 
     void OnShopItemBtnClicked(int itemIndex)
     {
-        if (Game.instance.HasEnoughCoins(ShopItemsList[itemIndex].price)) {
+        if (game.HasEnoughCoins(ShopItemsList[itemIndex].price, ShopItemsList[itemIndex].costsIlluminati)) {
 
-            Game.instance.UseCoins(ShopItemsList[itemIndex].price);
+            game.UseCoins(ShopItemsList[itemIndex].price, ShopItemsList[itemIndex].costsIlluminati);
             ShopItemsList[itemIndex].isPurchased = true;
 
             
 
             //Disbabling Button
             buyBtn = ShopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
+            loadSaveManager.SetSkinsUnlocked(itemIndex, true);
             DisableBuyButton();
             //EnableActiveButton();
             
             Game.instance.UpdateAllCoinsUIText();
-
-
-
-            
             
         }
 
         else
         {
-            NoCoinsAnim.SetTrigger("NoCoins");
+            NoCoinsText.text = "Not enough coins!!!";
+            NoCoinsText.GetComponent<Animator>().SetTrigger("NoCoins");
             Debug.Log("Not enough coins.");
         }        
     }
@@ -119,68 +141,33 @@ public class Shop : MonoBehaviour
     void DisableBuyButton()
     {
         buyBtn.interactable = false;
-        buyBtn.transform.GetChild(0).GetComponent<Text>().text = "Purchased";
+        buyBtn.transform.GetChild(0).GetComponent<Text>().text = "BOUGHT";
         activeButton.interactable = true;
 
     }
 
     void makeActive(int itemIndex)
     {
-        if (ShopItemsList[itemIndex].isPurchased )
+        if (ShopItemsList[itemIndex].isPurchased)
         {
-            if (ShopItemsList[itemIndex].isActive==false)
-            {
-                ShopItemsList[itemIndex].isActive = true;
-                //activeButtonColor.normalColor= activeColor;
-                //EnableActiveButton();
-                activeButton.transform.GetChild(0).GetComponent<Text>().text = "Activated";
-                Debug.Log("Item Activated");
-                for (int i = 0; i < ShopItemsList.Count; i++)
-                {
-                    if (i != itemIndex)
-                    {
-                        ShopItemsList[i].isActive = false;
-                        activeButton.transform.GetChild(0).GetComponent<Text>().text = "Activate";
-                        //activeButtonColor.normalColor = inActiveColor;
-                        Debug.Log("Item Unactivated");
-                        //DisableActiveButton();
-                    }
-                }
-                //Debug.Log("Item Active");
-            }
-            else
-            {
-                Debug.Log("Item Already Active");
-            }
+            int currentActiveSkin = loadSaveManager.CurrentSkin;
+            ShopScrollView.GetChild(currentActiveSkin).GetChild(4).GetComponent<Button>().interactable = true;
+            ShopScrollView.GetChild(currentActiveSkin).GetChild(4).GetChild(0).GetComponent<Text>().text = "SELECT";
+            ShopScrollView.GetChild(currentActiveSkin).GetComponent<Image>().sprite = shopItemSprite;
+
+            ShopScrollView.GetChild(itemIndex).GetChild(4).GetComponent<Button>().interactable = false;
+            ShopScrollView.GetChild(itemIndex).GetChild(4).GetChild(0).GetComponent<Text>().text = "SELECTED";
+            ShopScrollView.GetChild(itemIndex).GetComponent<Image>().sprite = shopItemSelectedSprite;
+
+            loadSaveManager.CurrentSkin = itemIndex;
+            
         }
         else
         {
+            NoCoinsText.text = "Purchase first!!!";
+            NoCoinsText.GetComponent<Animator>().SetTrigger("NoCoins");
             Debug.Log("Item not purchased yet.");
         }
-    }
-
-   /** void DisableActiveButton()
-    {
-        activeButton.interactable = false;
-        //activeButtonImage.raycastTarget = false;
-
-    }
-    void EnableActiveButton()
-    {
-        activeButton.interactable = true;
-        //activeButtonImage.raycastTarget = true;
-    }**/
-
-
-
-    public void OpenShop()
-    {
-        ShopPanel.SetActive(true);
-    }
-
-    public void CloseShop()
-    {
-        ShopPanel.SetActive(false);
     }
     
 }

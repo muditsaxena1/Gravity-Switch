@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Profile : MonoBehaviour
-{   
-    /**-----------I AM NOT USING THIS SCRIPT-----------**/
+{
+    /**-----------I AM NOT USING THIS SCRIPT
 
     #region Singleton:Profile
     public static Profile instance;
@@ -84,4 +84,5 @@ public class Profile : MonoBehaviour
 
         CurrentAvatar.sprite = AvatarsList[newSelectedIndex].Image;
     }
+    -----------**/
 }

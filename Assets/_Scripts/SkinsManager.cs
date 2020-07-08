@@ -5,15 +5,6 @@ using UnityEngine.UI;
 
 public class SkinsManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class ShopItem
-    {
-        public Sprite image;
-        public Color color = Color.white;
-        public bool costsIlluminati = false;
-        public int price;
-        public bool isPurchased = false;
-    }
     public List<ShopItem> ShopItemsList;
 
     public List<ShopItem> GetShopItemsList()

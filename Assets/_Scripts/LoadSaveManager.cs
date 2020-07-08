@@ -7,7 +7,7 @@ public class LoadSaveManager : MonoBehaviour
     public static LoadSaveManager instance;
 
     private int illuminatiCount;
-    private int diamondCount;
+    private int starCount;
     private int[] levelStars;
     private bool[] skinsUnlocked;
     private int currentSkin;
@@ -26,15 +26,15 @@ public class LoadSaveManager : MonoBehaviour
         }
     }
 
-    public int DiamondCount
+    public int StarCount
     {
         get
         {
-            return diamondCount;
+            return starCount;
         }
         set
         {
-            diamondCount = value;
+            starCount = value;
             SaveSystem.SaveData(this);
         }
     }
@@ -135,22 +135,35 @@ public class LoadSaveManager : MonoBehaviour
         {
             Debug.Log("Creating new data file");
             illuminatiCount = 0;
-            diamondCount = 0;
+            starCount = 0;
             levelStars = new int[50];
             for(int i = 0; i < 50; i++)
             {
                 levelStars[i] = -1;     // not cleared
             }
             skinsUnlocked = new bool[50];
+            skinsUnlocked[0] = true;
             currentSkin = 0;
             levelsUnlocked = 1;
 
+            //FOR TESTING PURPOSE ONLY
+            //DELETE LATER
+            levelsUnlocked = 5;
+            levelStars[0] = 3;
+            levelStars[1] = 1;
+            levelStars[2] = 0;
+            levelStars[3] = 2;
+
+            illuminatiCount = 4;
+            starCount = 10;
+
+            //TILL HERE
             SaveSystem.SaveData(this);
         }
         else
         {
             illuminatiCount = currData.illuminatiCount;
-            diamondCount = currData.diamondCount;
+            starCount = currData.starCount;
             levelStars = currData.levelStars;
             skinsUnlocked = currData.skinsUnlocked;
             currentSkin = currData.currentSkin;
