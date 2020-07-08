@@ -5,17 +5,9 @@ using UnityEngine;
 public class ins_manager : MonoBehaviour
 {
     public GameObject insPanel;
+    public GameObject credPanel;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void openIns()
     {
@@ -24,5 +16,13 @@ public class ins_manager : MonoBehaviour
     public void closeIns()
     {
         insPanel.SetActive(false);
+    }
+    public void openCred()
+    {
+        credPanel.SetActive(true);
+    }
+    public void closeCred()
+    {
+        credPanel.SetActive(false);
     }
 }
