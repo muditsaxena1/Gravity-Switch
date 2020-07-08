@@ -31,7 +31,7 @@ public class LevelPage : MonoBehaviour
     //}
     LoadSaveManager loadSaveManager;
     const int LEVELCOUNT = 50;
-
+    public Text coinText;
     public Sprite brightStar;
 
     [SerializeField] GameObject ItemTemplate;
@@ -90,8 +90,16 @@ public class LevelPage : MonoBehaviour
 
     void OnShopItemBtnClicked(int itemIndex)
     {
-        SceneManager.LoadScene((itemIndex + 1).ToString());
+        SceneManager.LoadScene(itemIndex + 3);
     }
 
+    public void OnBackButtonPress()
+    {
+        SceneManager.LoadScene(0);
+    }
 
+    public void OnShopButtonPress()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

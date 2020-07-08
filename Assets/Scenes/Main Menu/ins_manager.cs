@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ins_manager : MonoBehaviour
 {
@@ -8,6 +9,16 @@ public class ins_manager : MonoBehaviour
     public GameObject credPanel;
     // Start is called before the first frame update
 
+    
+    public void OnPlayButtonPress()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void OnShopButtonPress()
+    {
+        SceneManager.LoadScene(1);
+    }
 
     public void openIns()
     {
