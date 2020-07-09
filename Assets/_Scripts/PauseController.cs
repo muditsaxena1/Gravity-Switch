@@ -12,6 +12,8 @@ public class PauseController : MonoBehaviour
     public static PauseController instance;
     Color[] starColors;
     LoadSaveManager loadSaveManager;
+    int currentSceneIndex;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -29,6 +31,8 @@ public class PauseController : MonoBehaviour
         starColors[0] = new Color(1f, 1f, 1f, 1f); //white
         starColors[1] = new Color(0.73f, 0.73f, 0.73f, 1f); //grey
         starColors[2] = new Color(0.168f, 0.168f, 0.168f, 1f);  //black
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("currIndex:"+ currentSceneIndex);
     }
 
     public void OnPause()
@@ -41,6 +45,7 @@ public class PauseController : MonoBehaviour
     public void OnResume()
     {
         Debug.Log("Resuming Game");
+        audioSource.Play();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -86,16 +91,23 @@ public class PauseController : MonoBehaviour
 
     public void MainMenuClick()
     {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
         Debug.Log("Loading main menu");
     }
 
     public void RestartClick()
     {
+        //Application.LoadLevel(currentSceneIndex.ToString());
+        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1f;
         Debug.Log("Restarting the lvl");
     }
 
     public void NextLevelClick()
     {
+        SceneManager.LoadScene(currentSceneIndex + 1);
+        Time.timeScale = 1f;
         Debug.Log("Starting next lvl");
     }
 }

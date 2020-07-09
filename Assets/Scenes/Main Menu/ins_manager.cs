@@ -7,11 +7,17 @@ public class ins_manager : MonoBehaviour
 {
     public GameObject insPanel;
     public GameObject credPanel;
-    // Start is called before the first frame update
+    AudioSource audioSource;
 
-    
+    // Start is called before the first frame update
+     void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void OnPlayButtonPress()
     {
+       
         SceneManager.LoadScene(2);
     }
 
@@ -26,6 +32,7 @@ public class ins_manager : MonoBehaviour
     }
     public void closeIns()
     {
+        audioSource.Play();
         insPanel.SetActive(false);
     }
     public void openCred()
@@ -34,6 +41,7 @@ public class ins_manager : MonoBehaviour
     }
     public void closeCred()
     {
+        audioSource.Play();
         credPanel.SetActive(false);
     }
 }
