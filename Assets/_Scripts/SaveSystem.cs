@@ -15,10 +15,12 @@ public static class SaveSystem
 
         formatter.Serialize(stream, data);
         stream.Close();
+        Debug.Log(path);
     }
 
     public static DataFormat LoadData()
     {
+        Debug.Log(path);
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
