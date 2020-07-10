@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1535783802999777654}
-  - component: {fileID: 1535783802999777653}
+  - component: {fileID: 815984144155985690}
   m_Layer: 0
   m_Name: GameObject_Background
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1535783802999777653
+--- !u!114 &815984144155985690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,10 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
-  lerptime: 0.257
-  myColorsFirstArray:
-  - {r: 0.47881782, g: 0.45977217, b: 0.7924528, a: 1}
-  - {r: 0.40450338, g: 0.8490566, b: 0.4222855, a: 1}
-  myColorsSecondArray:
-  - {r: 1, g: 0.96244913, b: 0.3160377, a: 1}
-  - {r: 0.6571356, g: 0.38416696, b: 0.8396226, a: 1}
+  lerptime: 0
+  myColorsFirstArray: []
+  myColorsSecondArray: []
