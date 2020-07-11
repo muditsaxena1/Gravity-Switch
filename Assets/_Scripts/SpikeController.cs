@@ -37,10 +37,9 @@ public class SpikeController : MonoBehaviour
         yield return new WaitForSeconds(time);
         Time.timeScale = 0.5f;
         gameOverPanel.SetActive(true);
-        //backgroundAudioSource.volume = 0f;
+        
         GameLoseAudioSource.Play();
-        //backgroundAudioSource.SetActive(false);
-        //backgroundAudioSource.volume = 0.5f;
+        
         StartCoroutine(BackgroundAudioReplay((float)loseAudioLength));
 
     }

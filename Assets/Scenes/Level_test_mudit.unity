@@ -2782,12 +2782,12 @@ PrefabInstance:
     - target: {fileID: 15511983042692324, guid: 2311ad981353e604c81f24bbb653340c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 15511983042692324, guid: 2311ad981353e604c81f24bbb653340c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 15511983042692324, guid: 2311ad981353e604c81f24bbb653340c,
         type: 3}
@@ -4426,7 +4426,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1034362993}
   PlayerCube: {fileID: 981859802}
   backgroundAudio: {fileID: 287446776}
-  loseAudioLength: 8.385
+  loseAudioLength: 4.2
 --- !u!82 &1591140634
 AudioSource:
   m_ObjectHideFlags: 0
