@@ -15,6 +15,7 @@ public class PauseController : MonoBehaviour
     int currentSceneIndex;
     public AudioSource audioSource;
 
+
     private void Awake()
     {
         if(instance == null)
@@ -52,7 +53,7 @@ public class PauseController : MonoBehaviour
 
     IEnumerator OpenLevelClearMenu()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.7f);
 
         Time.timeScale = 0.5f;
         levelClearedMenu.SetActive(true);
@@ -91,23 +92,26 @@ public class PauseController : MonoBehaviour
 
     public void MainMenuClick()
     {
-        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+        //Time.timeScale = 1f;
         Debug.Log("Loading main menu");
     }
 
     public void RestartClick()
     {
         //Application.LoadLevel(currentSceneIndex.ToString());
-        SceneManager.LoadScene(currentSceneIndex);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(currentSceneIndex);
+        //Time.timeScale = 1f;
         Debug.Log("Restarting the lvl");
     }
 
     public void NextLevelClick()
     {
-        SceneManager.LoadScene(currentSceneIndex + 1);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+        //Time.timeScale = 1f;
         Debug.Log("Starting next lvl");
     }
 }
