@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI movesLeftText;
     public int movesLeft;
 
+    
+    public GameObject gameOverPanel;
+    public GameObject loseAudio;
+    AudioSource audioSourceLose;
+
     private void Awake()
     {
         if(instance == null)
@@ -32,6 +37,8 @@ public class GameManager : MonoBehaviour
         areaEffector = GetComponent<AreaEffector2D>();
         areaEffector.forceAngle = startingAngle;
         inputManager = InputManager.instance;
+        audioSourceLose = loseAudio.GetComponent<AudioSource>();
+
     }
 
     private void FixedUpdate()
@@ -45,6 +52,26 @@ public class GameManager : MonoBehaviour
                 movesLeftText.text = movesLeft.ToString();
 
             }
+        }
+        if (movesLeft==0)
+        {
+            
+
+            gameOverPanel.SetActive(true);
+            audioSourceLose.Play();
+            
+            
+        }
+    }
+
+    public void playbtnClicked()
+    {
+        if (movesLeft > 0)
+        {
+            areaEffector.forceAngle = (areaEffector.forceAngle + 270) % 360;
+            movesLeft--;
+            movesLeftText.text = movesLeft.ToString();
+
         }
     }
 
