@@ -13,7 +13,10 @@ public class PauseController : MonoBehaviour
     Color[] starColors;
     LoadSaveManager loadSaveManager;
     int currentSceneIndex;
+    //Click sounds 
     public AudioSource audioSource;
+    //BackgroundSound 
+    public AudioSource backgroundAudioSource;
 
 
     private void Awake()
@@ -57,6 +60,7 @@ public class PauseController : MonoBehaviour
 
         Time.timeScale = 0.5f;
         levelClearedMenu.SetActive(true);
+        backgroundAudioSource.volume = 0f;
     }
 
     public void OnLevelClear(int currStars)

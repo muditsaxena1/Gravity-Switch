@@ -22,8 +22,9 @@ public class PlayerScript : MonoBehaviour
     //public  bool isCompleted = false;
     /**public GameObject explodeCube;
     public GameObject gameOverPanel;**/
-    AudioSource audioSourceWin;
-    public GameObject backgroundAudioSource;
+    /**AudioSource audioSourceWin;
+    public GameObject backgroundAudioSource;**/
+    
 
     private void Start()
     {
@@ -41,7 +42,7 @@ public class PlayerScript : MonoBehaviour
         //new stuff
         //nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
         //Debug.Log("Cube name:"+ gameObject.name);
-        audioSourceWin = GetComponent<AudioSource>();
+        //audioSourceWin = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -98,8 +99,9 @@ public class PlayerScript : MonoBehaviour
             //isCompleted = true;
             Debug.Log("Level Completed");
             pauseController.OnLevelClear(starCollected);
-            audioSourceWin.Play();
-            backgroundAudioSource.SetActive(false);
+            /**audioSourceWin.Play();
+            backgroundAudioSource.SetActive(false);**/
+            
         }
         else if(collision.tag == "Star")
         {
