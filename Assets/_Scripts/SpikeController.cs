@@ -8,15 +8,17 @@ public class SpikeController : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject PlayerCube;
      //AudioSource GameLoseAudioSource;
-   /** public GameObject backgroundAudio;
+    public GameObject backgroundAudio;
     AudioSource backgroundAudioSource;
-    public double loseAudioLength;**/
-
+   public double loseAudioLength;
+    public AudioClip explodeAudioClip;
+    public AudioSource interactableAudioSource;
+    public float spikeExplodeVolume;
 
      void Start()
     {
         //GameLoseAudioSource = GetComponent<AudioSource>();
-        //backgroundAudioSource = backgroundAudio.GetComponent<AudioSource>();
+        backgroundAudioSource = backgroundAudio.GetComponent<AudioSource>();
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,29 +26,33 @@ public class SpikeController : MonoBehaviour
         if (collision.tag=="Player")
         {
             Instantiate(explodeCube, transform.position, Quaternion.identity);
+            interactableAudioSource.clip = explodeAudioClip;
+            interactableAudioSource.volume = spikeExplodeVolume;
+            interactableAudioSource.Play();
             //backgroundAudio.SetActive(false);
             //backgroundAudioSource.volume = 0f;
             PlayerCube.SetActive(false);
-            StartCoroutine(ExecuteAfterTime(0.5f));
+            StartCoroutine(ExecuteAfterTime(1f));
             
-            //gameOverPanel.SetActive(true);
+            
         }
     }
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
         Time.timeScale = 0.5f;
-       // gameOverPanel.SetActive(true);
+        backgroundAudioSource.volume = 0f;
+        gameOverPanel.SetActive(true);
         
-        //GameLoseAudioSource.Play();
         
-        //StartCoroutine(BackgroundAudioReplay((float)loseAudioLength));
+        
+        StartCoroutine(BackgroundAudioReplay((float)loseAudioLength));
 
     }
 
     IEnumerator BackgroundAudioReplay(float time)
     {
         yield return new WaitForSeconds(time);
-        //backgroundAudioSource.volume = 0.5f;
+        backgroundAudioSource.volume = 0.5f;
     }
 }

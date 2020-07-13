@@ -19,9 +19,13 @@ public class GameManager : MonoBehaviour
 
     
     public GameObject gameOverPanel;
-    public GameObject loseAudio;
-    AudioSource audioSourceLose;
+    /**public GameObject loseAudio;
+    AudioSource audioSourceLose;**/
 
+    PlayerScript playerSriptVariable;
+    //public GameObject backgroundAudio;
+    
+    public double loseAudioLength;
     private void Awake()
     {
         if(instance == null)
@@ -37,8 +41,9 @@ public class GameManager : MonoBehaviour
         areaEffector = GetComponent<AreaEffector2D>();
         areaEffector.forceAngle = startingAngle;
         inputManager = InputManager.instance;
-        audioSourceLose = loseAudio.GetComponent<AudioSource>();
-
+        //audioSourceLose = loseAudio.GetComponent<AudioSource>();
+        playerSriptVariable = PlayerScript.instance;
+        
     }
 
     private void FixedUpdate()
@@ -53,14 +58,16 @@ public class GameManager : MonoBehaviour
 
             }
         }
-        if (movesLeft==0)
+        if (movesLeft==0 && playerSriptVariable.isCollectableCollected==false)
         {
-            
 
+
+            //backgroundAudio.SetActive(false);
             gameOverPanel.SetActive(true);
-            audioSourceLose.Play();
-            
-            
+            //audioSourceLose.Play();
+            //StartCoroutine(BackgroundAudioReplay((float)loseAudioLength));
+
+
         }
     }
 
@@ -75,4 +82,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /**IEnumerator BackgroundAudioReplay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        backgroundAudio.SetActive(true);
+    }**/
 }

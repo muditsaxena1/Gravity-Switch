@@ -24,8 +24,20 @@ public class PlayerScript : MonoBehaviour
     public GameObject gameOverPanel;**/
     /**AudioSource audioSourceWin;
     public GameObject backgroundAudioSource;**/
-    
 
+    public AudioClip collectableAudioClip;
+    public AudioSource interactableAudioSource;
+    public float collectableSound;
+
+    public bool isCollectableCollected = false;
+    public static PlayerScript instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -92,8 +104,12 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.tag == "Collectable")
         {
+            isCollectableCollected = true;
             collision.gameObject.SetActive(false);
             gameManager.gameOn = false;
+            interactableAudioSource.clip = collectableAudioClip;
+            interactableAudioSource.volume = collectableSound;
+            interactableAudioSource.Play();
             particlesystem.SetActive(true);
             //new stuff
             //isCompleted = true;

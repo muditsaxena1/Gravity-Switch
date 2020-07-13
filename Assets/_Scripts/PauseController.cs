@@ -14,9 +14,10 @@ public class PauseController : MonoBehaviour
     LoadSaveManager loadSaveManager;
     int currentSceneIndex;
     //Click sounds 
-    public AudioSource audioSource;
-    //BackgroundSound 
-    public AudioSource backgroundAudioSource;
+    /**public AudioSource audioSource;
+    //BackgroundSound **/
+    public GameObject backgroundAudioSource;
+    
 
 
     private void Awake()
@@ -49,7 +50,7 @@ public class PauseController : MonoBehaviour
     public void OnResume()
     {
         Debug.Log("Resuming Game");
-        audioSource.Play();
+        //audioSource.Play();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -59,9 +60,12 @@ public class PauseController : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
 
         Time.timeScale = 0.5f;
+        backgroundAudioSource.SetActive(false);
         levelClearedMenu.SetActive(true);
-        backgroundAudioSource.volume = 0f;
+       
     }
+
+  
 
     public void OnLevelClear(int currStars)
     {
