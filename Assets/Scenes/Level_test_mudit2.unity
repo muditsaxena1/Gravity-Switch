@@ -3847,7 +3847,7 @@ MonoBehaviour:
   startingAngle: 270
   gameOn: 1
   movesLeftText: {fileID: 1660421406}
-  movesLeft: 100
+  movesLeft: 0
   gameOverPanel: {fileID: 1034362993}
   loseAudioLength: 8.385
 --- !u!114 &1194367723
@@ -5973,9 +5973,77 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
       propertyPath: img
       value: 
       objectReference: {fileID: 65443078}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[0].r
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[0].g
+      value: 0.011764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[0].b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[1].r
+      value: 0.0627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[1].g
+      value: 0.011764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[1].b
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[2].r
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[2].g
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[2].b
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[3].r
+      value: 0.2627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[3].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[3].b
+      value: 0.050980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[4].r
+      value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[4].b
+      value: 0.03519342
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[4].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656363899, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+      propertyPath: colorsList.Array.data[4].g
+      value: 0.023540407
+      objectReference: {fileID: 0}
     - target: {fileID: 2912673563055249264, guid: d2641bea8494baf4da1419389e139a93,
         type: 3}
       propertyPath: m_Name
@@ -9961,12 +10029,12 @@ PrefabInstance:
     - target: {fileID: 8774627321589095075, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.29
+      value: 8.1
       objectReference: {fileID: 0}
     - target: {fileID: 8774627321589095075, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: -8.9
       objectReference: {fileID: 0}
     - target: {fileID: 8774627321589095075, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
