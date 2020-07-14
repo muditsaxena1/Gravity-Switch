@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Game : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] Text[] allCoinsUIText;
+    [SerializeField] TextMeshProUGUI[] allCoinsUIText;
     int[] coinCount;
     LoadSaveManager loadSaveManager;
 

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     //public GameObject backgroundAudio;
     
     public double loseAudioLength;
+    int zero = 0;
     private void Awake()
     {
         if(instance == null)
@@ -36,8 +37,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movesLeftText.text = movesLeft.ToString(); 
-        //movesLeftText.text = movesLeft.ToString();
+       
+            
+        
+        movesLeftText.text = (movesLeft).ToString(); 
+        
         areaEffector = GetComponent<AreaEffector2D>();
         areaEffector.forceAngle = startingAngle;
         inputManager = InputManager.instance;
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inputManager.IsButtonDown())
+        /**if (inputManager.IsButtonDown())
         {
             if(movesLeft > 0)
             {
@@ -57,8 +61,8 @@ public class GameManager : MonoBehaviour
                 movesLeftText.text = movesLeft.ToString();
 
             }
-        }
-        if (movesLeft==0 && playerSriptVariable.isCollectableCollected==false)
+        }**/
+        /**if (movesLeft==0 && playerSriptVariable.isCollectableCollected==false)
         {
 
 
@@ -68,7 +72,7 @@ public class GameManager : MonoBehaviour
             //StartCoroutine(BackgroundAudioReplay((float)loseAudioLength));
 
 
-        }
+        }**/
     }
 
     public void playbtnClicked()
@@ -80,11 +84,18 @@ public class GameManager : MonoBehaviour
             movesLeftText.text = movesLeft.ToString();
 
         }
+        if (movesLeft == 0 && playerSriptVariable.isCollectableCollected == false)
+        {
+            StartCoroutine(gameOver(2f));
+        }
+
+
+
     }
 
-    /**IEnumerator BackgroundAudioReplay(float time)
+    IEnumerator gameOver(float time)
     {
         yield return new WaitForSeconds(time);
-        backgroundAudio.SetActive(true);
-    }**/
+        gameOverPanel.SetActive(true);
+    }
 }
