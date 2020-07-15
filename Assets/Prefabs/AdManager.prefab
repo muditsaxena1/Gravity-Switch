@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a285d197f12b7449a44e9cd1181325a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adPanel: {fileID: 0}
-  bgMusic: {fileID: 0}
-  illuminatiSpawn: {fileID: 0}
+  adPanel: {fileID: 4089036044043388727, guid: aafd69258dd12cb44badd6626268e1d9, type: 3}
+  bgMusic: {fileID: 3040411881637315739, guid: 25017a95f270d02409e4a5e138e81182, type: 3}
+  illuminatiSpawn: {fileID: 2272129468135965679, guid: 5ec739dbd0b4b544c813adf8e8953ce9,
+    type: 3}

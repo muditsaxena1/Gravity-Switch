@@ -29,8 +29,6 @@ public class Game : MonoBehaviour
     {
         coinCount = new int[2];
         loadSaveManager = LoadSaveManager.instance;
-        coinCount[0] = loadSaveManager.IlluminatiCount;
-        coinCount[1] = loadSaveManager.StarCount;
         UpdateAllCoinsUIText();
     }
     public void UseCoins(int amount, bool costsIlluminati)
@@ -53,6 +51,9 @@ public class Game : MonoBehaviour
 
     public void UpdateAllCoinsUIText()
     {
+
+        coinCount[0] = loadSaveManager.IlluminatiCount;
+        coinCount[1] = loadSaveManager.StarCount;
         for (int i=0;i<allCoinsUIText.Length;i++)
         {
             allCoinsUIText[i].text = coinCount[i].ToString();

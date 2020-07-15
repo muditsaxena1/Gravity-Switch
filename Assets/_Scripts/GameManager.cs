@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         if (movesLeft > 0)
         {
+            Debug.Log("How is calling me?");
             areaEffector.forceAngle = (areaEffector.forceAngle + 270) % 360;
             movesLeft--;
             movesLeftText.text = movesLeft.ToString();

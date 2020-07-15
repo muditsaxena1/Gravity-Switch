@@ -23,18 +23,18 @@ public class SpikeController : MonoBehaviour
     {
         if (collision.tag=="Player")
         {
-            Instantiate(explodeCube, transform.position, Quaternion.identity);
+            Instantiate(explodeCube, collision.transform.position, Quaternion.identity);
             //backgroundAudio.SetActive(false);
             //backgroundAudioSource.volume = 0f;
             PlayerCube.SetActive(false);
-            StartCoroutine(ExecuteAfterTime(0.5f));
+            StartCoroutine(ExecuteAfterTime(1.5f));
             
-            //gameOverPanel.SetActive(true);
         }
     }
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
+        gameOverPanel.SetActive(true);
         Time.timeScale = 0.5f;
        // gameOverPanel.SetActive(true);
         

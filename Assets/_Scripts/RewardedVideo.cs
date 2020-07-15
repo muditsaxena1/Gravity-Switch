@@ -1,5 +1,6 @@
 ﻿using UnityEngine.Events;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
 using GoogleMobileAds.Common;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class RewardedVideo : MonoBehaviour
     public AudioSource bgMusic;
     public GameObject illuminatiSpawn;
     LoadSaveManager loadSaveManager;
+    Game game;
     
 
     // ########### THIS IS TEST AD ID ############## "ca-app-pub-3940256099942544/5224354917"
@@ -85,6 +87,15 @@ public class RewardedVideo : MonoBehaviour
                         + amount.ToString() + " " + type);
         Debug.Log("Add 1 illuminati to the LoadSaveManager");
         loadSaveManager.IlluminatiCount += 1;
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            //Shop
+            if(game == null)
+            {
+                game = Game.instance;
+                game.UpdateAllCoinsUIText();
+            }
+        }
     }
 
     public void OnClickFreeButton()
