@@ -11,6 +11,7 @@ public class DataFormat
     public bool[] skinsUnlocked;
     public int currentSkin;
     public int levelsUnlocked;
+    public int gamesPlayedCount;
 
     public DataFormat(LoadSaveManager loadSaveManager)
     {
@@ -20,6 +21,7 @@ public class DataFormat
         skinsUnlocked = loadSaveManager.SkinsUnlocked;
         currentSkin = loadSaveManager.CurrentSkin;
         levelsUnlocked = loadSaveManager.LevelsUnlocked;
+        gamesPlayedCount = loadSaveManager.GamesPlayedCount;
     }
 
 }
