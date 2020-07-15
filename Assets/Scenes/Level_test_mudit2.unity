@@ -6536,6 +6536,7 @@ MonoBehaviour:
   - {fileID: 8733526267818125439}
   - {fileID: 8733526267248758197}
   backgroundAudioSource: {fileID: 1039193166}
+  playerCube: {fileID: 981859802}
 --- !u!1001 &504252522079670138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10021,22 +10022,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d0ded10bdc52aec42a958a28537ff04b,
+      objectReference: {fileID: 21300000, guid: 9f536eac721c1e84eb932fb632caf8ae,
         type: 3}
     - target: {fileID: 8774627321589095072, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8679245
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8774627321589095072, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.6918832
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8774627321589095072, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.6918832
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774627321589095072, guid: 03e8552f1b025fd4097bd8ba27828a4e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774627321589095072, guid: 03e8552f1b025fd4097bd8ba27828a4e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 8774627321589095073, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}

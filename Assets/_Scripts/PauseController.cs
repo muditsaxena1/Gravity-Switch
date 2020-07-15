@@ -17,7 +17,7 @@ public class PauseController : MonoBehaviour
     /**public AudioSource audioSource;
     //BackgroundSound **/
     public GameObject backgroundAudioSource;
-    
+    public GameObject playerCube;
 
 
     private void Awake()
@@ -62,6 +62,7 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 0.5f;
         backgroundAudioSource.SetActive(false);
         levelClearedMenu.SetActive(true);
+        playerCube.SetActive(false);
        
     }
 

@@ -6821,6 +6821,7 @@ MonoBehaviour:
   - {fileID: 8733526267818125439}
   - {fileID: 8733526267248758197}
   backgroundAudioSource: {fileID: 1039193166}
+  playerCube: {fileID: 981859802}
 --- !u!1001 &504252522079670138
 PrefabInstance:
   m_ObjectHideFlags: 0
