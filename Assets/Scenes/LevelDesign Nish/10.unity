@@ -4069,6 +4069,7 @@ MonoBehaviour:
   movesLeft: 12
   gameOverPanel: {fileID: 1034362993}
   loseAudioLength: 8.385
+  playerVariable: {fileID: 981859802}
 --- !u!114 &1194367723
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3847,9 +3847,10 @@ MonoBehaviour:
   startingAngle: 270
   gameOn: 1
   movesLeftText: {fileID: 1660421406}
-  movesLeft: 100
+  movesLeft: 1
   gameOverPanel: {fileID: 1034362993}
   loseAudioLength: 8.385
+  playerVariable: {fileID: 981859802}
 --- !u!114 &1194367723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10050,7 +10051,7 @@ PrefabInstance:
     - target: {fileID: 8774627321589095075, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.84
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8774627321589095075, guid: 03e8552f1b025fd4097bd8ba27828a4e,
         type: 3}

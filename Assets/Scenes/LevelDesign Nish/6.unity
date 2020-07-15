@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3974,6 +3974,7 @@ MonoBehaviour:
   movesLeft: 4
   gameOverPanel: {fileID: 1034362993}
   loseAudioLength: 8.385
+  playerVariable: {fileID: 981859802}
 --- !u!114 &1194367723
 MonoBehaviour:
   m_ObjectHideFlags: 0

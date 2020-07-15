@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     //public GameObject backgroundAudio;
     
     public double loseAudioLength;
+
+    public GameObject playerVariable;
     int zero = 0;
     private void Awake()
     {
@@ -97,5 +99,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         gameOverPanel.SetActive(true);
+        playerVariable.SetActive(false);
     }
 }
