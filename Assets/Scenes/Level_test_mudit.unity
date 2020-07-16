@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3154,6 +3154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8819e0f9d4eb2947a9cc62e28035d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitialAdManager: {fileID: 0}
   startingAngle: 270
   gameOn: 1
   movesLeftText: {fileID: 1660421406}
@@ -4012,6 +4013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4d6adc2c90c68478cdfbe5eaec9e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitialAdManager: {fileID: 0}
   explodeCube: {fileID: 7635460613105579323, guid: 74dda8267f2656c4b91f30e413df1d2c,
     type: 3}
   gameOverPanel: {fileID: 1034362993}
@@ -5545,6 +5547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0bc41ba0c8d704fb14ac3f6ad46153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitialAdManager: {fileID: 123871143}
   pauseMenu: {fileID: 8733526267457103043}
   levelClearedMenu: {fileID: 8733526266952245135}
   stars:
