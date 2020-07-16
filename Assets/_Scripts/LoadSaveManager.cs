@@ -12,6 +12,7 @@ public class LoadSaveManager : MonoBehaviour
     private bool[] skinsUnlocked;
     private int currentSkin;
     private int levelsUnlocked;
+    private int gamesPlayedCount;
 
     public int IlluminatiCount
     {
@@ -116,6 +117,19 @@ public class LoadSaveManager : MonoBehaviour
         }
     }
 
+    public int GamesPlayedCount
+    {
+        get
+        {
+            return gamesPlayedCount;
+        }
+        set
+        {
+            gamesPlayedCount = value;
+            SaveSystem.SaveData(this);
+        }
+    }
+
     public void Awake()
     {
         if(instance == null)
@@ -145,6 +159,7 @@ public class LoadSaveManager : MonoBehaviour
             skinsUnlocked[0] = true;
             currentSkin = 0;
             levelsUnlocked = 1;
+            gamesPlayedCount = 0;
 
             //FOR TESTING PURPOSE ONLY
             //DELETE LATER
@@ -168,6 +183,7 @@ public class LoadSaveManager : MonoBehaviour
             skinsUnlocked = currData.skinsUnlocked;
             currentSkin = currData.currentSkin;
             levelsUnlocked = currData.levelsUnlocked;
+            gamesPlayedCount = currData.gamesPlayedCount;
         }
     }
 }
