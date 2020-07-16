@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
+    public static bool isPlaying = true;
+
     GameManager gameManager;
     public GameObject particlesystem;
     TrailRenderer tr;
@@ -95,6 +97,7 @@ public class PlayerScript : MonoBehaviour
             collision.gameObject.SetActive(false);
             gameManager.gameOn = false;
             particlesystem.SetActive(true);
+            isPlaying = false;
             //new stuff
             //isCompleted = true;
             Debug.Log("Level Completed");

@@ -7,6 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public InterstitialAdManager interstitialAdManager;
     AreaEffector2D areaEffector;
     public float startingAngle;
     [HideInInspector]
@@ -55,12 +56,25 @@ public class GameManager : MonoBehaviour
         }
         if (movesLeft==0)
         {
-            
-
             gameOverPanel.SetActive(true);
             audioSourceLose.Play();
-            
-            
+            StartCoroutine(ShowGameOverPanel());
+        }
+    }
+
+    IEnumerator ShowGameOverPanel()
+    {
+        yield return new WaitForSeconds(5f);
+        if (PlayerScript.isPlaying)
+        {
+            PlayerScript.isPlaying = false;
+            //SHOW INTERSTITIAL
+            if(LoadSaveManager.instance.GamesPlayedCount >= 7)
+            {
+                interstitialAdManager.ShowInterstitialAd();
+            }
+            gameOverPanel.SetActive(true);
+            audioSourceLose.Play();
         }
     }
 
