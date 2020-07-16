@@ -93,8 +93,8 @@ public class RewardedVideo : MonoBehaviour
             if(game == null)
             {
                 game = Game.instance;
-                game.UpdateAllCoinsUIText();
             }
+            game.UpdateAllCoinsUIText();
         }
     }
 

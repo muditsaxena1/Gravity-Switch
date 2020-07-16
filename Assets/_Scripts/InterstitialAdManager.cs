@@ -14,7 +14,7 @@ public class InterstitialAdManager : MonoBehaviour
 
     private InterstitialAd interstitial;
     LoadSaveManager loadSaveManager;
-    public AudioSource bgMusic;
+    public AudioSource[] bgMusic;
 
     private void Start()
     {
@@ -59,13 +59,19 @@ public class InterstitialAdManager : MonoBehaviour
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdOpened event received");
-        bgMusic.Pause();
+        for(int i = 0; i < bgMusic.Length; i++)
+        {
+            bgMusic[i].mute = true;
+        }
     }
 
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdClosed event received");
-        bgMusic.Play();
+        for (int i = 0; i < bgMusic.Length; i++)
+        {
+            bgMusic[i].mute = false;
+        }
         loadSaveManager.GamesPlayedCount = 0;
         interstitial.Destroy();
     }

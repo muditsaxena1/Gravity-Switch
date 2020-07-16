@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
+    public InterstitialAdManager interstitial;
     public GameObject pauseMenu;
     public GameObject levelClearedMenu;
     public Image[] stars;
@@ -38,6 +39,12 @@ public class PauseController : MonoBehaviour
         starColors[2] = new Color(0.168f, 0.168f, 0.168f, 1f);  //black
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("currIndex:"+ currentSceneIndex);
+
+        loadSaveManager.GamesPlayedCount += 1;
+        if(loadSaveManager.GamesPlayedCount >= 7)
+        {
+            interstitial.LoadAd();
+        }
     }
 
     public void OnPause()
@@ -58,7 +65,10 @@ public class PauseController : MonoBehaviour
     IEnumerator OpenLevelClearMenu()
     {
         yield return new WaitForSeconds(0.7f);
-
+        if(loadSaveManager.GamesPlayedCount >= 7)
+        {
+            interstitial.ShowInterstitialAd();
+        }
         Time.timeScale = 0.5f;
         backgroundAudioSource.SetActive(false);
         levelClearedMenu.SetActive(true);

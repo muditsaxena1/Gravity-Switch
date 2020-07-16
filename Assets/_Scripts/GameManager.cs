@@ -7,6 +7,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+
+    public InterstitialAdManager interstitial;
     AreaEffector2D areaEffector;
     public float startingAngle;
     [HideInInspector]
@@ -98,6 +100,10 @@ public class GameManager : MonoBehaviour
     IEnumerator gameOver(float time)
     {
         yield return new WaitForSeconds(time);
+        if (LoadSaveManager.instance.GamesPlayedCount >= 7)
+        {
+            interstitial.ShowInterstitialAd();
+        }
         gameOverPanel.SetActive(true);
         playerVariable.SetActive(false);
     }

@@ -136,10 +136,10 @@ public class PlayerScript : MonoBehaviour
         }**/
     }
 
-    /**IEnumerator ExecuteAfterTime(float time)
+    IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
 
         
-    }**/
+    }
 }

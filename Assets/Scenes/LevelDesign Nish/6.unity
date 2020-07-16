@@ -3968,6 +3968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8819e0f9d4eb2947a9cc62e28035d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitial: {fileID: 2039064252}
   startingAngle: 270
   gameOn: 1
   movesLeftText: {fileID: 1660421406}
@@ -4977,6 +4978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4d6adc2c90c68478cdfbe5eaec9e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitial: {fileID: 2039064252}
   explodeCube: {fileID: 7635460613105579323, guid: 74dda8267f2656c4b91f30e413df1d2c,
     type: 3}
   gameOverPanel: {fileID: 1034362993}
@@ -6236,6 +6238,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2641bea8494baf4da1419389e139a93, type: 3}
+--- !u!1001 &2039064251
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8121923697681259600, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_Name
+      value: Interstitial Ad Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121923697681259601, guid: 8b69fad29e3813b42899a8a112faa7be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b69fad29e3813b42899a8a112faa7be, type: 3}
+--- !u!114 &2039064252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8121923697681259602, guid: 8b69fad29e3813b42899a8a112faa7be,
+    type: 3}
+  m_PrefabInstance: {fileID: 2039064251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ca253c9320e014fada94ddbf46b731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2050044440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6658,6 +6741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0bc41ba0c8d704fb14ac3f6ad46153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitial: {fileID: 2039064252}
   pauseMenu: {fileID: 8733526267457103043}
   levelClearedMenu: {fileID: 8733526266952245135}
   stars:

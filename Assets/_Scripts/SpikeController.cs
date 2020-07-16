@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SpikeController : MonoBehaviour
 {
+    public InterstitialAdManager interstitial;
     public GameObject explodeCube;
     public GameObject gameOverPanel;
     public GameObject PlayerCube;
-     //AudioSource GameLoseAudioSource;
+    //AudioSource GameLoseAudioSource;
     public GameObject backgroundAudio;
     AudioSource backgroundAudioSource;
-   public double loseAudioLength;
+    public double loseAudioLength;
     public AudioClip explodeAudioClip;
     public AudioSource interactableAudioSource;
     public float spikeExplodeVolume;
@@ -25,7 +26,7 @@ public class SpikeController : MonoBehaviour
     {
         if (collision.tag=="Player")
         {
-            Instantiate(explodeCube, transform.position, Quaternion.identity);
+            Instantiate(explodeCube, collision.transform.position, Quaternion.identity);
             interactableAudioSource.clip = explodeAudioClip;
             interactableAudioSource.volume = spikeExplodeVolume;
             interactableAudioSource.Play();
@@ -33,14 +34,16 @@ public class SpikeController : MonoBehaviour
             //backgroundAudioSource.volume = 0f;
             PlayerCube.SetActive(false);
             StartCoroutine(ExecuteAfterTime(1f));
-            
-            
         }
     }
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
         Time.timeScale = 0.5f;
+        if (LoadSaveManager.instance.GamesPlayedCount >= 7)
+        {
+            interstitial.ShowInterstitialAd();
+        }
         backgroundAudioSource.volume = 0f;
         gameOverPanel.SetActive(true);
         
