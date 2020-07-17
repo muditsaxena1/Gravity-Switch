@@ -16,7 +16,10 @@ public class SpikeController : MonoBehaviour
     public AudioSource interactableAudioSource;
     public float spikeExplodeVolume;
 
-     void Start()
+    public CameraShake cameraShake;
+    public float cameraShakeDuration;
+    public float cameraShakeMagnitude;
+    void Start()
     {
         //GameLoseAudioSource = GetComponent<AudioSource>();
         backgroundAudioSource = backgroundAudio.GetComponent<AudioSource>();
@@ -30,6 +33,7 @@ public class SpikeController : MonoBehaviour
             interactableAudioSource.clip = explodeAudioClip;
             interactableAudioSource.volume = spikeExplodeVolume;
             interactableAudioSource.Play();
+            StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
             //backgroundAudio.SetActive(false);
             //backgroundAudioSource.volume = 0f;
             PlayerCube.SetActive(false);

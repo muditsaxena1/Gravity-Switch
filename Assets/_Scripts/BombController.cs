@@ -10,6 +10,9 @@ public class BombController : MonoBehaviour
     public AudioClip explodeAudioClip;
     public AudioSource interactableAudioSource;
     public float bombExplodeVolume;
+    public CameraShake cameraShake;
+    public float cameraShakeDuration;
+    public float cameraShakeMagnitude;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +22,7 @@ public class BombController : MonoBehaviour
             interactableAudioSource.clip = explodeAudioClip;
             interactableAudioSource.volume = bombExplodeVolume;
             interactableAudioSource.Play();
+            StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
             Vector2 direction = playerRb.position - new Vector2(transform.position.x,transform.position.y);
             playerRb.AddForce(force * direction.normalized);
             Destroy(gameObject);
