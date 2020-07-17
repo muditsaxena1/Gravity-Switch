@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
+    public Animator arrowAnimator;
     public InterstitialAdManager interstitial;
     AreaEffector2D areaEffector;
     public float startingAngle;
@@ -41,13 +41,28 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-            
-        
         movesLeftText.text = (movesLeft).ToString(); 
-        
         areaEffector = GetComponent<AreaEffector2D>();
         areaEffector.forceAngle = startingAngle;
+        switch (startingAngle)
+        {
+            case 0f:
+                arrowAnimator.SetTrigger("Left");
+                break;
+            case 90f:
+                arrowAnimator.SetTrigger("Up");
+                break;
+            case 180f:
+                arrowAnimator.SetTrigger("Right");
+                break;
+            case 270f:
+                arrowAnimator.SetTrigger("Down");
+                break;
+            default:
+                Debug.Log("This should not have printed ever!!");
+                break;
+
+        }
         inputManager = InputManager.instance;
         //audioSourceLose = loseAudio.GetComponent<AudioSource>();
         playerSriptVariable = PlayerScript.instance;
@@ -84,6 +99,25 @@ public class GameManager : MonoBehaviour
         if (movesLeft > 0)
         {
             areaEffector.forceAngle = (areaEffector.forceAngle + 270) % 360;
+            switch (areaEffector.forceAngle)
+            {
+                case 0f:
+                    arrowAnimator.SetTrigger("Left");
+                    break;
+                case 90f:
+                    arrowAnimator.SetTrigger("Up");
+                    break;
+                case 180f:
+                    arrowAnimator.SetTrigger("Right");
+                    break;
+                case 270f:
+                    arrowAnimator.SetTrigger("Down");
+                    break;
+                default:
+                    Debug.Log("This should not have printed ever!!");
+                    break;
+
+            }
             movesLeft--;
             movesLeftText.text = movesLeft.ToString();
 
