@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu/Main_menu_1.unity
     guid: b1db435f6987e23489d5fd40b8659007
   - enabled: 1
-    path: Assets/Scenes/Shop/Shop_2.unity
+    path: Assets/Scenes/Shop/Shop.unity
     guid: cf4ab630e42374847876cefc1619dbc5
   - enabled: 1
-    path: Assets/Scenes/Level Page/Level_page_2.unity
+    path: Assets/Scenes/Level Page/Level_page.unity
     guid: aa9ab8cc5a113cf4db7b837443648930
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/5.unity
