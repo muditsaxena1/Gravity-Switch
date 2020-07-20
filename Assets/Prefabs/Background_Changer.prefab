@@ -43,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a53de21266d90e469ca99f0e967d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 8075493524216715131, guid: b0f93f97a893cc3418fb25c5a5cb2018, type: 3}
+  img: {fileID: 0}
   lerptime: 0.01
   colorsList:
-  - {r: 1, g: 0.3537736, b: 0.3537736, a: 1}
-  - {r: 0.6815353, g: 0.35294116, b: 1, a: 1}
-  - {r: 0.35294116, g: 1, b: 0.98278093, a: 1}
-  - {r: 0.6621509, g: 1, b: 0.35294116, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.9801798, g: 0, b: 1, a: 1}
+  - {r: 0, g: 0.12542915, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.18360782, a: 1}
+  - {r: 0.7919054, g: 1, b: 0, a: 1}

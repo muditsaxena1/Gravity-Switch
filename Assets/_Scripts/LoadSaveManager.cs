@@ -163,14 +163,14 @@ public class LoadSaveManager : MonoBehaviour
 
             //FOR TESTING PURPOSE ONLY
             //DELETE LATER
-            levelsUnlocked = 5;
+            levelsUnlocked = 50;
             levelStars[0] = 3;
             levelStars[1] = 1;
             levelStars[2] = 0;
             levelStars[3] = 2;
 
-            illuminatiCount = 4;
-            starCount = 10;
+            illuminatiCount = 4000;
+            starCount = 10000;
 
             //TILL HERE
             SaveSystem.SaveData(this);
