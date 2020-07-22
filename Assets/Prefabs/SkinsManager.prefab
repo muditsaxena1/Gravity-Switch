@@ -44,27 +44,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopItemsList:
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 1, g: 0, b: 0.33080626, a: 1}
     costsIlluminati: 0
     price: 3
     isPurchased: 1
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 1, g: 0, b: 0.5563879, a: 1}
     costsIlluminati: 0
     price: 3
     isPurchased: 0
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 0.8294525, g: 0, b: 1, a: 1}
     costsIlluminati: 0
     price: 3
     isPurchased: 0
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 0, g: 0.65787745, b: 1, a: 1}
     costsIlluminati: 0
     price: 3
     isPurchased: 0
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 0, g: 1, b: 0.63248205, a: 1}
     costsIlluminati: 0
     price: 3
@@ -74,17 +74,17 @@ MonoBehaviour:
     costsIlluminati: 1
     price: 3
     isPurchased: 0
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 0.9427508, g: 1, b: 0, a: 1}
     costsIlluminati: 0
     price: 3
     isPurchased: 0
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 0.21382427, g: 0, b: 1, a: 1}
     costsIlluminati: 0
     price: 3
     isPurchased: 0
-  - image: {fileID: 21300000, guid: 9e0a468aaad1b1742b0d3c83bf53da98, type: 3}
+  - image: {fileID: 21300000, guid: 399f56f64558eb9449232ff406de3434, type: 3}
     color: {r: 0.12724805, g: 1, b: 0, a: 1}
     costsIlluminati: 0
     price: 3
@@ -94,7 +94,202 @@ MonoBehaviour:
     costsIlluminati: 1
     price: 3
     isPurchased: 0
+  - image: {fileID: 21300000, guid: 73e46cffe59e84644a31650c7f25231c, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 45cf489dffd911649a7c33fe0677418a, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 101d6b797ff5f054fa46adfe6ac5ace3, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: b671af304b1fcd64585c72672a8a6e0d, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: c53f7f44a0ad5904ea7c2745d52fc059, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: d91e4420dcf04d044b690600186d9f73, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: fea6a78e1f86aab4d8d3b2c40ef31a89, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 2dce5ca49b256e148ab4f34d3c7887a4, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: fd61f74d72dfef14499f0ebbc208a550, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: b9dd77a1b5fd6a64d8edc4be72718008, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: ec42c5a4ff7d8e84d886444a381a8b0f, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 1922dfe471c3f6a448aee5c61d7110d5, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: c2b2c2fbd57baf6448d290cc0a78d151, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: ebf6bc6ec27726e4bbca7f3fe3526680, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 73e46cffe59e84644a31650c7f25231c, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: dba354ce58aba03469c462d9d66c3ad2, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 07140f858517858469a733ba62dfe8f6, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 1e3a9696e548fc74797bf6872b2cae4a, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: d55160b6f5c834448b2ae03519887f5c, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 9f536eac721c1e84eb932fb632caf8ae, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: b8df77e901410f545911e1bbdf05c55a, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: bc787b619362b894ea51147bdff637a1, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: fc0e582ad72eac44c9579d5bc499a629, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 8dfb719eef3c22f48ac7821851d33f04, type: 3}
+    color: {r: 1, g: 0.4745098, b: 0, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: e2a928a1dbbbc0c4eb5a8838e6123532, type: 3}
+    color: {r: 1, g: 0, b: 0.99675035, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 2496a852cbc4b3942b2b008fe058dd7c, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 4d4fc9b2d56b08943a704c8ea59a042b, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: b1b5bf9de15ed9147a60ac1679d7329a, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: d0ded10bdc52aec42a958a28537ff04b, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 7ebd1c011c4ccf949b68254b59cf9540, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 7ef09bd45c8bd3749abef88ec40efd04, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 909abf20e630c974a802203ec86cc672, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: b722b8b3dcf980242ab0c4dcfa2af80b, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 054f87673df747547a84abeb02b33dfe, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 43e91b8af65a62f4faa8d265e9b07fd1, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
   - image: {fileID: 21300000, guid: 17148ee3f1873b0418c5b33bdef5e343, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 8cd1c33aeb2ad0a4a9433128da0ef4a8, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 8595fe2aad0e44547a9e7ec15a7ea249, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 4432a20b9f072454c9dcb4613c1af4da, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    costsIlluminati: 1
+    price: 3
+    isPurchased: 0
+  - image: {fileID: 21300000, guid: 8cd1c33aeb2ad0a4a9433128da0ef4a8, type: 3}
     color: {r: 1, g: 1, b: 1, a: 1}
     costsIlluminati: 1
     price: 3

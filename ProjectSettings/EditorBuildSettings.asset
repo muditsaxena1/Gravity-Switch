@@ -15,20 +15,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Level Page/Level_page.unity
     guid: aa9ab8cc5a113cf4db7b837443648930
   - enabled: 1
-    path: Assets/Scenes/1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/LevelDesign Nish/1.unity
+    guid: 77c44b8fdfcfd88468331c37f506928f
   - enabled: 1
-    path: Assets/Scenes/2.unity
-    guid: 6c2eb01a0e213c744b9a058279b563a6
+    path: Assets/Scenes/LevelDesign Nish/2.unity
+    guid: c71356f5e96779b4b9d1561bd91ee306
   - enabled: 1
-    path: Assets/Scenes/3.unity
-    guid: 2e0faf34b4035bc4dba7570fffec4df6
+    path: Assets/Scenes/LevelDesign Nish/3.unity
+    guid: 00457c8c04b84fa408c8046e6ffe7e97
   - enabled: 1
-    path: Assets/Scenes/4.unity
-    guid: e98bdc997cfd0bb489b66aacb7365c20
+    path: Assets/Scenes/LevelDesign Nish/4.unity
+    guid: dd95ec8ea9a692d4784bdeeb785400e3
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/5.unity
-    guid: 77c44b8fdfcfd88468331c37f506928f
+    guid: 28423294dd3e2e64593d669bc10ec166
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/6.unity
     guid: 10f91a1530593e64c8c341af2dd11039
@@ -37,22 +37,22 @@ EditorBuildSettings:
     guid: f3b6cbb7cf682014899e2ca26cf28275
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/8.unity
-    guid: b6df840acfa0d6c448e0dfa5f5290f43
+    guid: bb07975842d330546ad371a5f5f11925
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/9.unity
-    guid: 5eb6d61a35b5d2149a6c169a7c4018a7
+    guid: f57444575473c21478902f74eb3f6378
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/10.unity
-    guid: e789a9a5b980cbb4aa19ac9ad102b116
+    guid: 40aded67787dee7418cd8396268ccc26
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/11.unity
-    guid: a4ea232e2a70988459ada1246bef8afa
+    guid: e5454e889f834904284e3f9e67ee6bd6
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/12.unity
-    guid: 528e71b800bc5db40bfb8658176c9b07
+    guid: ded07e0bf090ae748aea92a9f068f52d
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/13.unity
-    guid: b4a886eade8817e49b6b3ea5e60769dd
+    guid: d21db2e4e70e91c4399ae4f033fc8e18
   - enabled: 1
     path: Assets/Scenes/LevelDesign Nish/14.unity
     guid: 573944ed35cdd54429488b3ef5b2ddfb

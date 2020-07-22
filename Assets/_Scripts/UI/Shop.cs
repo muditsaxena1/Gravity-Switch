@@ -60,7 +60,7 @@ public class Shop : MonoBehaviour
 
         int activeSkinIndex = loadSaveManager.CurrentSkin;
         bool[] purchasedSkins = loadSaveManager.SkinsUnlocked;
-
+        skinsManager = SkinsManager.instance;
         ShopItemsList = skinsManager.GetShopItemsList();
 
         int len = ShopItemsList.Count;
