@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
         }
         if (movesLeft == 0 && playerSriptVariable.isCollectableCollected == false)
         {
-            StartCoroutine(gameOver(2f));
+            StartCoroutine(gameOver(5f));
         }
 
 
@@ -134,11 +134,14 @@ public class GameManager : MonoBehaviour
     IEnumerator gameOver(float time)
     {
         yield return new WaitForSeconds(time);
-        if (LoadSaveManager.instance.GamesPlayedCount >= 7)
+        if(playerSriptVariable.isCollectableCollected == false)
         {
-            interstitial.ShowInterstitialAd();
+            if (LoadSaveManager.instance.GamesPlayedCount >= 7)
+            {
+                interstitial.ShowInterstitialAd();
+            }
+            gameOverPanel.SetActive(true);
+            playerVariable.SetActive(false);
         }
-        gameOverPanel.SetActive(true);
-        playerVariable.SetActive(false);
     }
 }
