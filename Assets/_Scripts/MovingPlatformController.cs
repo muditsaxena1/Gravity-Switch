@@ -18,7 +18,7 @@ public class MovingPlatformController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!forceActivated && collision.gameObject.tag == "Player")
+        if(!forceActivated && (collision.gameObject.tag == "Player" || collision.gameObject.tag == "MovingPlatform"))
         {
             rb.AddForce(transform.up * force * 3);
             forceActivated = true;

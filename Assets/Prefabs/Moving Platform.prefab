@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1850098256066809436}
   m_Layer: 0
   m_Name: Moving Platform
-  m_TagString: Untagged
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 30
+  explode: {fileID: 7635460613105579323, guid: 74dda8267f2656c4b91f30e413df1d2c, type: 3}
 --- !u!50 &1850098256066809436
 Rigidbody2D:
   serializedVersion: 4
@@ -143,4 +144,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
