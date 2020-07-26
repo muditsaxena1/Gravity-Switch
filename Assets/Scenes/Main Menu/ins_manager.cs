@@ -21,6 +21,11 @@ public class ins_manager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void OnRateUsButtonPressed()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.electricfoxentertainment.gravityglitch");
+    }
+
     public void OnShopButtonPress()
     {
         SceneManager.LoadScene(1);
